@@ -9,8 +9,9 @@ services:
         ports: 
             - "3000:3000"
     db:
-        image: postgres:12.1
+        build: 
+            context: ./db
+            dockerfile: Dockerfile
         restart: always
-        environment: 
-            - "POSTGRES_PASSWORD=postgres"
-            - "POSTGRES_USER=postgres"
+        command: ./setup.sh
+        
