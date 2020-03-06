@@ -12,8 +12,10 @@ services:
         build: 
             context: ./db
             dockerfile: Dockerfile
+        ports:
+            - "5432:5432"
         environment: 
-            - "PGPORT=5432"
-            - "POSTGRES_USER=postgres"
-            - "POSTGRES_PASSWORD=postgres"
-            - "POSTGRES_DB=webapp"
+            PGPORT: 5432
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: webapp

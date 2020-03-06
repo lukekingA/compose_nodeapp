@@ -1,7 +1,7 @@
 
 
 
-CREATE TABLE persons (
+CREATE TABLE if not exists persons (
 	id int GENERATED ALWAYS AS IDENTITY,
 	first_name varchar(20) NOT NULL,
 	last_name varchar(20) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE persons (
 	)
 );
 
-CREATE TABLE street_address (
+CREATE TABLE if not exists street_address (
 	id int GENERATED ALWAYS AS IDENTITY,
 	person_id int NOT NULL,
 	state varchar(20) NOT NULL,
